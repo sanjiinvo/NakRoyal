@@ -14,6 +14,7 @@ import AreaCarousel from './areaCarouse';
 import LocationMap from './Gismap';
 import { useEffect, useState } from 'react';
 import Gallery from './gallery';
+import Planirovka from './Planirovka';
 
 var DG = require('2gis-maps');
 
@@ -143,6 +144,7 @@ function App() {
         </div>
         </div>
         </div>
+        <Planirovka/>
         <div className='top_carousel'>
           <CarouselFadeExample/>
         </div>
