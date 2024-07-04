@@ -13,6 +13,7 @@ import AdvCarousel from './advCarousel';
 import AreaCarousel from './areaCarouse';
 import LocationMap from './Gismap';
 import { useEffect, useState } from 'react';
+import Gallery from './gallery';
 
 var DG = require('2gis-maps');
 
@@ -52,6 +53,7 @@ function App() {
       <div className='App'>
         <div className='mob_menu_box'>
           <ul className='mob_menu_list'>
+                <li><Instagram className='mob_menu_icons' color="white" /><Facebook className='mob_menu_icons' color="white"/></li>
                 <li>О комплексе</li>
                 <li>Преимущества</li>
                 <li>Планировки</li>
@@ -70,8 +72,8 @@ function App() {
           <button className='burger' onClick={MobMenuState}></button>
           {/* <List onClick={MobMenuState} className='mobile_list burger'/> */}
             <ul>
-                <li>О комплексе</li>
-                <li>Преимущества</li>
+                <li><a href='#RoyalExpo'>О комплексе</a></li>
+                <li><a href='#Advantages'>Преимущества</a> </li>
                 <li>Планировки</li>
             </ul>
         </div>
@@ -131,9 +133,9 @@ function App() {
         <div className='header_right'>
         <div className='header_right_menu'>
             <ul>
-            <li>Расположение</li>
-            <li>Галерея</li>
-            <li>Отдел продаж</li>
+            <li><a href='#Location'>Расположение</a></li>
+            <li><a href='#Gallery'>Галерея</a></li>
+            <li><a href='#SalesDepartment'>Отдел продаж</a></li>
             </ul>
         </div>
         <div className='header_right_contacts'>
@@ -144,7 +146,7 @@ function App() {
         <div className='top_carousel'>
           <CarouselFadeExample/>
         </div>
-        <div className='complex_Royal_description'>
+        <div id='RoyalExpo' className='complex_Royal_description'>
           <p className='complex_Royal_description_tittle'>Жилой комплекс «Royal Expo»</p>
           <p className='complex_Royal_description_text'>ROYAL EXPO — это олицветворение современного делового образа жизни и комфортного досуга.<br/>
           Архитектура комплекса выполнена в современном стиле с использованием классических элементов, которые подчеркивают благородство форм и статус жилого комплекса.
@@ -175,7 +177,7 @@ function App() {
 
 
         </div>
-        <div className='advantages mt-5'>
+        <div id='Advantages' className='advantages mt-5'>
               <div className='advantages_carousel'>
                 <AdvCarousel/>
               </div>
@@ -283,7 +285,7 @@ function App() {
               </div>
             </div>
         </div>
-        <div className='location mt-5'>
+        <div id='Location' className='location mt-5'>
           <p className='location_tittle'>
           Расположение
           </p>
@@ -297,9 +299,9 @@ function App() {
                 <div id="royalmap" style={{width:'70vw', height:'40vh'}}></div>
             </div>
         </div>
-        <div className='gallery'>
+                <div id='Gallery'></div>
+                <Gallery />
 
-        </div>
         <div className='nak-company mt-5'>
           <p className='nak-company_tittle'>
           Строительная компания «NAK»
@@ -324,7 +326,7 @@ function App() {
               на рынке
               </p>
             </div>
-            <div className='nak-company_number'>
+            <div id='bignumber500' className='nak-company_number'>
               <p className='nak-company_bignumber'>
               {`>5000
 `}
@@ -347,7 +349,7 @@ function App() {
 
           </div>
         </div>
-        <div className='sale-dep mt-5'>
+        <div id='SalesDepartment' className='sale-dep mt-5'>
             <p className='sale-dep_tittle'>
             Отдел продаж
             </p>
