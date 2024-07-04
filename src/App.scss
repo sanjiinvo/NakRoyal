@@ -1,0 +1,785 @@
+body{
+    max-width: 1400px;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    padding: 0;
+    background-color: #f6f6f6 !important;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+$t-color:#C7A381;
+.ticket_button{
+    font-size: 1.5rem;
+    padding: 8px;
+    background: $t-color;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+
+    &:hover{
+        background-color: #1C2949;
+    }
+}
+.middlelogo{
+    width: 300px;
+
+    @media (max-width: 1200px) {
+        width: 200px;
+    }
+    @media (max-width: 1200px) {
+        width: 200px;
+    }
+    @media (max-width: 1000px) {
+        width: 150px;
+    }
+    @media (max-width: 768px) {
+        width: 250px;
+    }
+}
+.burger {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    border: none;
+    background: transparent;
+    width: 40px;
+    height: 26px;
+    margin: 30px auto;
+  }
+  .burger::before,
+  .burger::after {
+    content: '';
+    left: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 4px;
+    border-radius: 10px;
+    background: #fffdfd;
+  }
+  .burger::before {
+    top: 0;
+    box-shadow: 0 11px 0 #ffffff;
+    transition: box-shadow .3s .15s, top .3s .15s, transform .3s;
+  }
+  .burger::after {
+    bottom: 0;
+    transition: bottom .3s .15s, transform .3s;
+  }
+  .burger.active::before {
+    top: 11px;
+    transform: rotate(45deg);
+    box-shadow: 0 6px 0 rgba(0,0,0,0);
+    transition: box-shadow .15s, top .3s, transform .3s .15s;
+  }
+  .burger.active::after {
+    bottom: 11px;
+    transform: rotate(-45deg);
+    transition: bottom .3s, transform .3s .15s;
+  }
+.active_menu{
+    transform: translateY(-1%) !important;
+
+}
+.mob_menu_box{
+    width: 100%;
+    height: 55vw;
+    background-color: #22314a;
+    position: absolute;
+    z-index: 10;
+    display: flex;
+    align-items: flex-end;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+
+
+    .mob_menu_list{
+        align-self: flex-end;
+        margin: 0 auto 2vh auto;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        color: white;
+        text-align: center;
+        li{
+            list-style: none;
+            font-size: 1.3rem;
+            margin-bottom: 0.5vh;
+        }
+    }
+}
+.header{
+    position: fixed;
+    top: 0;
+    background-color: #C7A381;
+    display: flex;
+    justify-content: center;
+    height: 79px;
+    align-items: center;
+    z-index: 10;
+    width: 100%;
+
+
+    @media (max-width: 1200px) {
+
+    }
+ 
+    .top_icon{
+        width: 30px;
+        height: 30px;
+    }
+    .header_left{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fff;
+        width: 40vw;
+        flex: 1;
+        @media (max-width: 1200px) {
+            font-size: 1.1rem;
+        }
+        @media (max-width: 1000px) {
+            font-size: 1rem;
+            width: 100%;
+        }
+
+
+         .header_left_icons{
+            display: flex;
+            justify-content: space-between;
+            gap: 2vw;
+            @media (max-width:768px) {
+                display: none;
+            }
+         }
+         .header_left_menu{
+            
+            ul{
+                display: flex;
+                justify-content: space-between;
+                gap: 2vw;
+                @media (max-width:1000px) {
+                    gap: 1vw;
+                }
+                li{
+                    list-style: none;
+                }
+
+                @media (max-width:768px) {
+                    display: none;
+                }
+            }
+            .mobile_list{
+                width: 50px;
+                height: 50px;
+
+            }
+         }
+    }
+    .header_right{
+        margin-left: -50px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100%;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fff;
+        width: 35vw;
+        flex: 1;
+        @media (max-width:1000px) {
+            font-size: 1rem;
+        }
+
+        .header_right_menu{
+            ul{
+                @media (max-width:1000px) {
+                    gap: 1vw;
+                }
+                display: flex;
+                gap: 2vw;
+                li{
+                    list-style: none;
+                }
+            }
+            @media (max-width:768px) {
+                display: none;
+            }
+        }
+    }
+    .header_middle{
+        margin-top: 80px;
+        display: flex;
+        text-align: center;
+        align-self: center;
+        flex: 1;
+        @media (max-width:1000px) {
+            margin-top: 30px;   
+        }
+    }
+
+
+
+}
+.top_carousel{
+    // margin-top: 79px !important;
+    position: relative;
+    text-align: center;
+    @media (max-width:768px) {
+        width: 100%;
+    }
+
+}
+.download-file-link{
+    color: white;
+    text-decoration: none;
+    list-style: none;
+}
+.top_carous_img{
+    object-fit: contain;
+    filter: brightness(0.6);
+    @media (max-width:768px) {
+        width: 100%;
+        object-fit: cover;
+    }
+}
+.top_carous_text_box{
+    position: absolute;
+    top: 40%;
+    text-align: start !important;;
+}
+.top_carous_img_tittle{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+.top_carous_img_text{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #d8bd89;
+}
+.complex_Royal_description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #646464;
+    
+
+    .complex_Royal_description_tittle{
+        color: $t-color;
+        font-size: 3rem;
+        @media (max-width:768px) {
+            font-size: 2.7rem;
+        }
+    }
+
+    .complex_Royal_description_text{
+        font-size: 1.3rem;
+        max-width: 80%;
+
+    }
+}
+.your_royal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+
+
+    .your_royal_tittle{
+        font-size: 2.7rem;
+        @media (max-width:768px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    .your_royal_items{
+        display: flex;
+        justify-content: center;
+        width: 80%;
+        height: 70vh;
+        gap: 1vw;
+        background-color: rgb(255, 255, 255);
+        @media (max-width:1000px) {
+            width: 90%;
+        }
+
+    }
+    .your_royal_img_box{
+        flex: 1;
+        background-image: url(./images/re-expo.jpg);
+        object-fit: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        @media (max-width:1000px) {
+            background-position: 20% center;
+        }
+        @media (max-width:768px) {
+            background-position: 30% center;
+        }
+        
+
+
+        
+    }
+    .your_royal_text_box{
+        text-align: center;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        .your_royal_text_box_tittle{
+            font-size: 2rem;
+            font-weight: 600;
+            color: $t-color;
+            @media (max-width:768px) {
+                font-size: 1.7rem;
+            }
+        }
+
+        .your_royal_text_box_text{
+            font-size: 1.5rem;
+            width: 90%;
+            @media (max-width:768px) {
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+.advantages_carousel{
+    width: 100%;
+    
+}
+.adv_carous_img{
+    height: 70vh;
+    filter: brightness(1);
+    @media (max-width:1000px) {
+        height: 50vh;
+    }
+    @media (max-width:1000px) {
+        height: 40vh;
+    }
+    
+}
+.advantages{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+// .adv_carous_text_box{
+//     position: absolute;
+//     top: -10%;
+//     margin: 0 auto;
+//     background-color: rgba(77, 69, 69, 0.5);
+//     height: 50%;
+//     width: 50%;
+// }
+.carous-extra-text{
+    width: 30vw;
+    height: 30vh;
+    background-color: white;
+    margin: auto;
+    position: relative;
+    z-index: 3;
+    top: 10vh;
+    border: 1px solid black;
+    border-radius: 16px;
+    box-shadow: 10px 20px 10px rgba(0, 0, 0, 0.7);
+    padding: 8px;
+    transform: height 0.3 ease;
+    @media (max-width:1000px) {
+        width: 40vw;
+        top: 15vh;
+    }
+    @media (max-width:1000px) {
+        width: 50vw;
+        top: 10vh;
+    }
+
+    .carousel-indicators{
+        position: absolute;
+        bottom: 0;
+        // left: 50%;
+        z-index: 2;
+
+       top: 0;
+    }
+
+}
+.extra_text_box{
+    padding-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #646464;
+}
+.advantages_items{
+    margin: auto;
+ display: flex;
+ flex-wrap: wrap;
+ gap: 1vw;
+ justify-content: center;
+ align-items: center;
+ width: 90%;
+
+    .advantages_item{
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+        gap: 1vw;
+
+        .advantages_item_img{
+
+        }
+    }
+}
+.advantages_numbers{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    @media (max-width:768px) {
+        width: 100%;
+    }
+
+
+    .advantages_number{
+        display: flex;
+        align-items: center;
+        gap: 1.2vw;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        @media (max-width:768px) {
+            width: 90%;
+        }
+        
+
+        
+        .advantages_number_bignumber{
+            font-size: 4rem;
+            color: #22314a;
+            @media (max-width:768px) {
+                font-size: 3rem;
+            }
+        }
+        .advantages_number_description{
+            color: #22314a;
+        }
+    }
+}
+.closed_area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 70%;
+    text-align: center;
+    @media (max-width:768px) {
+        width: 90%;
+    }
+
+    .closed_area_tittle{
+        color: $t-color;
+        font-size: 3rem;
+    }
+    .closed_area_description{
+        color: #1C2949;
+        font-size: 1.2rem;
+    }
+    .area_carousel_box{
+        width: 70vw;
+        @media (max-width:1000px) {
+            width: 80vw;
+        }
+        @media (max-width:768px) {
+            width: 90vw;
+        }
+    }
+}
+.entrance{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width:1000px) {
+        width: 90%;
+    }
+    
+
+    .entrance_tittle{
+        color: $t-color;
+        font-size: 3rem;
+        text-align: center;
+        @media (max-width:768px) {
+            font-size: 2.5rem;
+        }
+    }
+
+    .entrance_items{
+        display: flex;
+        justify-content: center;
+        height: 60vh;
+
+
+        .entrance_text_box{
+            display: flex;
+            flex: 1;
+            background-color: #fff;
+            
+            
+            .entrance_text_box_description{
+                font-size: 1.2rem;
+                color: #1C2949;
+                text-align: start;
+                padding: 2vw;
+                width: 80%;
+                @media (max-width:1000px) {
+                    padding: 1vw;
+                }
+                @media (max-width:768px) {
+                    font-size: 1rem;
+                }
+            }
+        }
+        .entrance_img{
+            display: flex;
+            flex: 1;
+            background-image: url('./images/entrance/hall-royalexpo.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+
+        }
+    }
+}
+.location{
+    width: 80%;
+    margin: auto;
+    padding: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding-bottom: 4vh;
+
+    @media (max-width:1000px) {
+        width: 90%;
+    }
+
+
+
+    .location_tittle{
+        color: $t-color;
+        font-size: 3rem;
+    }
+    .location_description{
+        color: #1C2949;
+        font-size: 1.2rem;
+        text-align: center;
+    }
+}
+.nak-company{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+    @media (max-width:1000px) {
+        width: 90%;
+    }
+    @media (max-width:1000px) {
+        width: 90%;
+    }
+
+
+    .nak-company_tittle{
+        font-size: 3rem;
+        color: $t-color;
+
+        @media (max-width:1000px) {
+            font-size: 2.7rem;
+        }
+        @media (max-width:768px) {
+            font-size: 2.5rem;
+        }
+    }
+    
+
+
+    .nak-company_items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30vh;
+        background-color: white;
+        @media (max-width:768px) {
+            height: 40vh;
+        }
+        .nak-company_description{
+            text-align: start;
+            color: #1C2949;
+            flex: 1;
+            padding: 2vw;
+        }
+        .nak-company_img{
+            background-image: url('./images/naklogo.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            height: 100%;
+            flex: 1;
+
+        }
+    }
+    .nak-company_numbers{
+        display: flex;
+        margin: auto;
+        width: 80%;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        @media (max-width:1000px) {
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        .nak-company_number{
+            display: flex;
+            align-items: center;
+            gap: 1.5vw;
+            width: 33%;
+            text-align: start;
+            justify-content: center;
+            flex: 1;
+            @media (max-width:1000px) {
+                gap: 1vw;
+            }
+
+
+            .nak-company_bignumber{
+                font-size: 5rem;
+                color: #22314a;
+                @media (max-width:768px) {
+                    font-size: 3.5rem;
+                }
+            }
+            .nak-company_number_description{
+                text-align: start;
+            }
+        }
+    }
+}
+
+.sale-dep{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+    text-align: center;
+
+
+    
+    @media (max-width:1000px) {
+        width: 100%;
+    }
+
+    
+
+    .sale-dep_tittle{
+        font-size: 2.5rem;
+        color: #22314a;
+    }
+
+
+    .sale-dep_items{
+        display: flex;
+        margin: auto;
+        align-items: first baseline;
+        justify-content: space-between;
+        width: 80%;
+        @media (max-width:1000px) {
+            width: 90%;
+        }
+        @media (max-width:768px) {
+            width: 95%;
+        }
+
+        .sale-dep_item{
+            display: flex;
+            align-items: first baseline;
+            gap: 1vw;
+            height: 130px;
+
+
+
+            .sales-icons{
+                width: 50px;
+                height: 50px;
+
+                @media (max-width:768px) {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+
+            .sale-dep_item_description{
+                display: flex;
+                flex-direction: column;
+                text-align: start;
+                align-items: center;
+                
+
+                .sale-dep_item_description_tittle{
+                    font-size: 1.2rem;
+                    color: #22314a;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
+}
+.gis{
+    margin: auto;
+
+}
+.Footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    padding: 2vw;
+    background-color: #1C2949;
+    color: white;
+
+    .Footer_tittle{
+        color: $t-color;
+    }
+}
