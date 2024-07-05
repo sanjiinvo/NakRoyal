@@ -1,6 +1,7 @@
 body{
-    display: flex;
+    align-self: center;
     margin: auto;
+    display: flex;
     padding: 0;
     background-color: #f6f6f6 !important;
     position: relative;
@@ -367,11 +368,12 @@ $t-color:#C7A381;
     color: #d8bd89;
 }
 .complex_Royal_description{
+    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width: 80%;
     height: 100%;
     text-align: center;
     color: #646464;
@@ -428,7 +430,7 @@ $t-color:#C7A381;
         display: flex;
         justify-content: center;
         width: 80%;
-        height: 70vh;
+        height: calc(min-content + 2vh);
         gap: 1vw;
         background-color: rgb(255, 255, 255);
         @media (max-width:1000px) {
@@ -521,7 +523,7 @@ $t-color:#C7A381;
 // }
 .carous-extra-text{
     width: 30vw;
-    height: 30vh;
+    height: calc(min-content + 3vh);
     background-color: white;
     margin: auto;
     position: relative;
@@ -733,7 +735,7 @@ flex-direction: column;
     .entrance_items{
         display: flex;
         justify-content: center;
-        height: 60vh;
+        height: calc(min-content + 2 vh);
         @media (max-width:600px) {
             flex-direction: column-reverse;
         }

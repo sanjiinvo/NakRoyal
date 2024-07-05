@@ -11,7 +11,7 @@ import r3_162 from './images/planirovka/3r/162,0.png';
 import r4_167 from './images/planirovka/4r/167,04.png';
 import r4_171 from './images/planirovka/4r/171,3.png';
 import r4_187 from './images/planirovka/4r/187,7.png';
-import { List, XCircle, XCircleFill } from "react-bootstrap-icons";
+import { List, Search, XCircle, XCircleFill } from "react-bootstrap-icons";
 
 const Planirovka = () => {
   const [selectedRoom, setSelectedRoom] = useState(null);
@@ -34,68 +34,110 @@ const Planirovka = () => {
     if (selectedRoom === 2) {
       return (
         <div className="flats-buttons">
-          <Button onClick={() => setSelectedFlat(2.1)}>117,22м</Button>
+          <Button 
+            onClick={() => setSelectedFlat(2.1)} 
+            className={selectedFlat === 2.1 ? 'selected' : ''}
+          >117,22м</Button>
         </div>
       );
     } else if (selectedRoom === 3) {
       return (
         <div className="flats-buttons">
-          <Button onClick={() => setSelectedFlat(3.1)}>144,09м</Button>
-          <Button onClick={() => setSelectedFlat(3.2)}>150,59м</Button>
-          <Button onClick={() => setSelectedFlat(3.3)}>159,75м</Button>
-          <Button onClick={() => setSelectedFlat(3.4)}>161,6м</Button>
-          <Button onClick={() => setSelectedFlat(3.5)}>161,9м</Button>
-          <Button onClick={() => setSelectedFlat(3.6)}>162,0м</Button>
+          <Button 
+            onClick={() => setSelectedFlat(3.1)} 
+            className={selectedFlat === 3.1 ? 'selected' : ''}
+          >144,09м</Button>
+          <Button 
+            onClick={() => setSelectedFlat(3.2)} 
+            className={selectedFlat === 3.2 ? 'selected' : ''}
+          >150,59м</Button>
+          <Button 
+            onClick={() => setSelectedFlat(3.3)} 
+            className={selectedFlat === 3.3 ? 'selected' : ''}
+          >159,75м</Button>
+          <Button 
+            onClick={() => setSelectedFlat(3.4)} 
+            className={selectedFlat === 3.4 ? 'selected' : ''}
+          >161,6м</Button>
+          <Button 
+            onClick={() => setSelectedFlat(3.5)} 
+            className={selectedFlat === 3.5 ? 'selected' : ''}
+          >161,9м</Button>
+          <Button 
+            onClick={() => setSelectedFlat(3.6)} 
+            className={selectedFlat === 3.6 ? 'selected' : ''}
+          >162,0м</Button>
         </div>
       );
     } else if (selectedRoom === 4) {
       return (
         <div className="flats-buttons">
-          <Button onClick={() => setSelectedFlat(4.1)}>167,04м</Button>
-          <Button onClick={() => setSelectedFlat(4.2)}>171,3м</Button>
-          <Button onClick={() => setSelectedFlat(4.3)}>187,7м</Button>
+          <Button 
+            onClick={() => setSelectedFlat(4.1)} 
+            className={selectedFlat === 4.1 ? 'selected' : ''}
+          >167,04м</Button>
+          <Button 
+            onClick={() => setSelectedFlat(4.2)} 
+            className={selectedFlat === 4.2 ? 'selected' : ''}
+          >171,3м</Button>
+          <Button 
+            onClick={() => setSelectedFlat(4.3)} 
+            className={selectedFlat === 4.3 ? 'selected' : ''}
+          >187,7м</Button>
         </div>
       );
     }
     return null;
   };
-  const [showblock, setShowBlock] = useState(false)
-  const showPlans = () =>{
-    let block = document.querySelector('.planirovka')
-    block.classList.toggle('showblock')
-    setShowBlock(!showblock)
-  }
+
+  const [showblock, setShowBlock] = useState(false);
+  const showPlans = () => {
+    let block = document.querySelector('.planirovka');
+    block.classList.toggle('showblock');
+    setShowBlock(!showblock);
+  };
 
   return (
     <div className="planirovka_cont">
-        <button className="plans_button" onClick={showPlans}> Планировки комнат</button>
-    <div className="planirovka">
-        <XCircleFill className="close_plans" onClick={showPlans}/>
-      <p className="planirovka_tittle">Планировка квартир</p>
-      <div className="planirovka_main_container">
-        <div className="left_img">
-          {selectedFlat && <img src={flatImages[selectedFlat]} alt="Планировка" />}
-        </div>
-        <div className="layout">
-        <div className="right_menu">
-          <p className="planirovka_menu_tittle">Выберите планировку:</p>
-          <div className="planirovka_menu">
-            <div className="rooms">
-              <Button onClick={() => setSelectedRoom(2)}>2-комн</Button>
-              <Button onClick={() => setSelectedRoom(3)}>3-комн</Button>
-              <Button onClick={() => setSelectedRoom(4)}>4-комн</Button>
-            </div>
-            <div className="flats">
-              <ShowFlatButtons />
-            </div>
+      <button className="plans_button" onClick={showPlans}>
+        <Search /> Планировки комнат
+      </button>
+      <div className="planirovka">
+        <XCircleFill className="close_plans" onClick={showPlans} />
+        <p className="planirovka_tittle">Планировка квартир</p>
+        <div className="planirovka_main_container">
+          <div className="left_img">
+            {selectedFlat && <img src={flatImages[selectedFlat]} alt="Планировка" />}
           </div>
-          <div className="">
+          <div className="layout">
+            <div className="right_menu">
+              <p className="planirovka_menu_tittle">Выберите планировку:</p>
+              <div className="planirovka_menu">
+                <div className="rooms">
+                  <Button 
+                    onClick={() => setSelectedRoom(2)} 
+                    className={selectedRoom === 2 ? 'selected' : ''}
+                  >2-комн</Button>
+                  <Button 
+                    onClick={() => setSelectedRoom(3)} 
+                    className={selectedRoom === 3 ? 'selected' : ''}
+                  >3-комн</Button>
+                  <Button 
+                    onClick={() => setSelectedRoom(4)} 
+                    className={selectedRoom === 4 ? 'selected' : ''}
+                  >4-комн</Button>
+                </div>
+                <div className="flats">
+                  <ShowFlatButtons />
+                </div>
+              </div>
+              <div>
                 <button className="plan_button_submit">Отправить заявку</button>
+              </div>
+            </div>
           </div>
-        </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

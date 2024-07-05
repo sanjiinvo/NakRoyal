@@ -57,7 +57,7 @@ function App() {
                 <li><Instagram className='mob_menu_icons' color="white" /><Facebook className='mob_menu_icons' color="white"/></li>
                 <li>О комплексе</li>
                 <li>Преимущества</li>
-                <li>Планировки</li>
+                {/* <li>Планировки</li> */}
                 <li>Расположение</li>
                 <li>Галерея</li>
                 <li>Отдел продаж</li>
@@ -75,7 +75,7 @@ function App() {
             <ul>
                 <li><a href='#RoyalExpo'>О комплексе</a></li>
                 <li><a href='#Advantages'>Преимущества</a> </li>
-                <li>Планировки</li>
+                {/* <li>Планировки</li> */}
             </ul>
         </div>
         </div>
@@ -160,7 +160,7 @@ function App() {
         <div className='your_royal mt-5'>
           <p className='your_royal_tittle'>Ваш жилой комплекс «Royal Expo»</p>
           <div className='your_royal_items mt-5'>
-          <div className='your_royal_text_box pt-5'>
+          <div className='your_royal_text_box '>
             <p className='your_royal_text_box_tittle'>
               Выбор тех, кто хочет жить с комфортом
             </p>
@@ -269,7 +269,7 @@ function App() {
                   
         <div className='entrance mt-5'>
           <p className='entrance_tittle'>Подъездные холлы жилого комплекса</p>
-            <div className='entrance_items mt-4'>
+            <div className='entrance_items'>
               <div className='entrance_text_box'>
                 <div className='entrance_text_box_description mt-5'>
                 Сочетание строгости и красоты классического интерьера с функциональностью современного. 
