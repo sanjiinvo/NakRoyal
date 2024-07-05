@@ -116,6 +116,10 @@ $t-color:#C7A381;
         height: 52vh;
         align-items: center;
     }
+    @media (max-width:400px) {
+        height: 50vh;
+        align-items: center;
+    }
 
 
 
@@ -359,6 +363,9 @@ $t-color:#C7A381;
     color: #fff;
     @media (max-width:600px) {
         font-size: 2rem;
+    }   
+     @media (max-width:400px) {
+        font-size: 1.5rem;
     }
     
 }
@@ -366,6 +373,9 @@ $t-color:#C7A381;
     font-size: 1.5rem;
     font-weight: 600;
     color: #d8bd89;
+    @media (max-width:400px) {
+        font-size: 1rem;
+    }
 }
 .complex_Royal_description{
     margin: auto;
@@ -856,6 +866,11 @@ flex-direction: column;
             flex-direction: column-reverse;
             height: 50vh;
         }
+        @media (max-width:400px) {
+            flex-direction: column-reverse;
+            height: 80vh;
+        }
+
         .nak-company_description{
             text-align: start;
             color: #1C2949;
@@ -863,6 +878,10 @@ flex-direction: column;
             padding: 2vw;
             @media (max-width:600px) {
                 text-align: center;
+            }
+            @media (max-width:400px) {
+                text-align: center;
+                padding: 1vw;
             }
             
         }
@@ -889,11 +908,12 @@ flex-direction: column;
             width: 90%;
             justify-content: center;
             flex-wrap: wrap;
+            padding-top: 5vh;
         }
-#bignumber500{
-    @media (max-width:600px) {
-        display: none;
-    }
+        #bignumber500{
+            @media (max-width:600px) {
+                display: none;
+            }
 }
         .nak-company_number{
             display: flex;
@@ -917,6 +937,9 @@ flex-direction: column;
                 }
                 @media (max-width:600px) {
                     font-size: 3.5rem;
+                }
+                @media (max-width:400px) {
+                    font-size: 2.5rem;
                 }
             }
             .nak-company_number_description{
@@ -942,6 +965,9 @@ flex-direction: column;
     .sale-dep_tittle{
         font-size: 2.5rem;
         color: #22314a;
+        @media (max-width:500px) {
+            font-size: 2rem;
+        }
     }
 
 
