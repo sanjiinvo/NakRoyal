@@ -15,12 +15,19 @@ import LocationMap from './Gismap';
 import { useEffect, useState } from 'react';
 import Gallery from './gallery';
 import Planirovka from './Planirovka';
+import RequestForm from './ApplicationForm';
 
 var DG = require('2gis-maps');
 
 
 function App() {
 
+  const [isRequestFormVisible, setRequestFormVisible] = useState(false);
+  const toggleRequestForm = () => {
+    setRequestFormVisible(!isRequestFormVisible);
+  };
+
+  
   const [mobMenu, setmobMenu] = useState(false)
 
   const MobMenuState = ()=>{
@@ -52,9 +59,15 @@ function App() {
 
     return(
       <div className='App'>
+        <RequestForm isVisible={isRequestFormVisible} onClose={toggleRequestForm} />
         <div className='mob_menu_box'>
           <ul className='mob_menu_list'>
-                <li><Instagram className='mob_menu_icons' color="white" /><Facebook className='mob_menu_icons' color="white"/></li>
+                <li>
+                <a href='https://www.instagram.com/nak.astana/' className='link_button'><Instagram className='mob_menu_icons' color="white" /></a>
+                <a href='https://www.facebook.com/nak.construction' className='link_button'>
+                <Facebook className='mob_menu_icons' color="white"/>
+                </a>
+                </li>
                 <li>О комплексе</li>
                 <li>Преимущества</li>
                 {/* <li>Планировки</li> */}
@@ -66,8 +79,8 @@ function App() {
         <div className='header'>
         <div className='header_left'>
         <div className='header_left_icons'>
-            <Instagram className='top_icon' color="white" />
-            <Facebook className='top_icon' color="white"/>
+           <a href='https://www.instagram.com/nak.astana/' className='link_button'><Instagram className='top_icon' color="white" /></a> 
+            <a href='https://www.facebook.com/nak.construction' className='link_button'><Facebook className='top_icon' color="white"/></a>
         </div>
         <div className='header_left_menu'>
           <button className='burger' onClick={MobMenuState}></button>
@@ -140,7 +153,7 @@ function App() {
             </ul>
         </div>
         <div className='header_right_contacts'>
-          <TelephoneForwardFill className='top_icon' />
+          <a className='link_button' href='tel:+77005199999'><TelephoneForwardFill className='top_icon' /></a>
         </div>
         </div>
         </div>
@@ -155,7 +168,7 @@ function App() {
           <br/>
           Жилой комплекс «Royal Expo» - это дом, где вы можете жить так, как вам хочется – стильно, современно и безопасно!
           </p>
-          <button className='ticket_button' type='button'>Отправить Заявку</button>
+          <button onClick={toggleRequestForm} className='ticket_button' type='button'>Отправить Заявку</button>
         </div>
         <div className='your_royal mt-5'>
           <p className='your_royal_tittle'>Ваш жилой комплекс «Royal Expo»</p>
@@ -263,7 +276,7 @@ function App() {
 <br/>
 На дворовой территории квартала гармонично и изящно расположились все основные атрибуты для счастливой жизни. Светлое, уютное пространство с зелеными зонами, игровыми площадками и зонами отдыха помогут здесь найти каждому занятие по вкусу.
           </p>
-          <button className='ticket_button'> отправить заявку</button>
+          <button onClick={toggleRequestForm} className='ticket_button'> отправить заявку</button>
           <AreaCarousel/>
         </div>
                   
@@ -295,7 +308,7 @@ function App() {
           Жилой комплекс «Royal Expo» в сердце столицы!
             Комплекс расположен в районе EXPO2017, с его современной архитектурой и не высотной застройкой, зелеными парками и бульварами, развитой инфраструктурой, широком выбором развлечений и шопинга.
             Всего в нескольких шагах от жилого комплекса расположен EXPO-парк с велосипедными дорожками, пешеходными аллеями, детский развлекательный парк, ТРЦ «Mega Silk Way».'</p>
-            <button className='ticket_button'> отправить заявку</button>
+            <button onClick={toggleRequestForm} className='ticket_button'> отправить заявку</button>
             <div className='location_2gis mt-5'>
                 {/* <LocationMap/> */}
                 <div id="royalmap" style={{width:'70vw', height:'40vh'}}></div>

@@ -12,11 +12,15 @@ import r4_167 from './images/planirovka/4r/167,04.png';
 import r4_171 from './images/planirovka/4r/171,3.png';
 import r4_187 from './images/planirovka/4r/187,7.png';
 import { List, Search, XCircle, XCircleFill } from "react-bootstrap-icons";
+import RequestForm from "./ApplicationForm";
 
 const Planirovka = () => {
   const [selectedRoom, setSelectedRoom] = useState(null);
   const [selectedFlat, setSelectedFlat] = useState(null);
-
+  const [isRequestFormVisible, setRequestFormVisible] = useState(false);
+  const toggleRequestForm = () => {
+    setRequestFormVisible(!isRequestFormVisible);
+  };
   const flatImages = {
     2.1: r2_117,
     3.1: r3_144,
@@ -71,6 +75,7 @@ const Planirovka = () => {
       );
     } else if (selectedRoom === 4) {
       return (
+        
         <div className="flats-buttons">
           <Button 
             onClick={() => setSelectedFlat(4.1)} 
@@ -99,6 +104,8 @@ const Planirovka = () => {
 
   return (
     <div className="planirovka_cont">
+                  <RequestForm isVisible={isRequestFormVisible} onClose={toggleRequestForm} />
+
       <button className="plans_button" onClick={showPlans}>
         <Search /> Планировки комнат
       </button>
@@ -132,7 +139,7 @@ const Planirovka = () => {
                 </div>
               </div>
               <div>
-                <button className="plan_button_submit">Отправить заявку</button>
+                <button onClick={toggleRequestForm} className="plan_button_submit">Отправить заявку</button>
               </div>
             </div>
           </div>
