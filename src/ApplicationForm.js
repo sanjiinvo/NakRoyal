@@ -14,24 +14,15 @@ const RequestForm = ({ isVisible, onClose }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const validatePhone = (phone) => {
-    const phoneRegex = /^8-\d{3}-\d{3}-\d{2}-\d{2}$/;
-    return phoneRegex.test(phone);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Отправка данных:', formData); // Добавлено для отладки
-
-    if (!validatePhone(formData.phone)) {
-      setResponseMessage('Пожалуйста, введите номер телефона в формате 8-***-***-**-**');
-      return;
-    }
 
     const formDataToSend = new FormData();
     formDataToSend.append('name', formData.name);
     formDataToSend.append('phone', formData.phone);
     formDataToSend.append('message', formData.message);
+
 
     axios.post('mail.php', formDataToSend)
       .then(response => {
@@ -60,7 +51,7 @@ const RequestForm = ({ isVisible, onClose }) => {
           </label>
           <label>
             Телефон:
-            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required placeholder="8-***-***-**-**" />
+            <input type="text" placeholder='8-123-456-78-90' name="phone" value={formData.phone} onChange={handleChange} required />
           </label>
           <label>
             Сообщение:
