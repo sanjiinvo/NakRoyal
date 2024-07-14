@@ -38,7 +38,6 @@ function App() {
 
 
     setmobMenu(!mobMenu)
-    console.log(`clicked`);
   }
 
   useEffect(()=>{
