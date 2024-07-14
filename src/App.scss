@@ -147,6 +147,13 @@ $t-color:#C7A381;
             list-style: none;
             font-size: 1.3rem;
             margin-bottom: 0.5vh;
+
+            a{
+                list-style: none;
+                text-decoration: none;
+                color: white;
+            }
+
             @media (max-width:400px) {
                 font-size: 1rem;
             }

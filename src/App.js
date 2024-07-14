@@ -67,12 +67,12 @@ function App() {
                 <Facebook className='mob_menu_icons' color="white"/>
                 </a>
                 </li>
-                <li>О комплексе</li>
-                <li>Преимущества</li>
+                <li><a href='#RoyalExpo'>О комплексе</a></li>
+                <li><a href='#Advantages'>Преимущества</a></li>
                 {/* <li>Планировки</li> */}
-                <li>Расположение</li>
-                <li>Галерея</li>
-                <li>Отдел продаж</li>
+                <li><a href='#Location'>Расположение</a></li>
+                <li><a href='#Gallery'>Галерея</a></li>
+                <li><a href='#SalesDepartment'>Отдел продаж</a></li>
           </ul>
         </div>
         <div className='header'>
