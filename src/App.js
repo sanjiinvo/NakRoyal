@@ -16,17 +16,29 @@ import { useEffect, useState } from 'react';
 import Gallery from './gallery';
 import Planirovka from './Planirovka';
 import RequestForm from './ApplicationForm';
+import PopUpDiscont from './PopUp';
 
 var DG = require('2gis-maps');
 
 
 function App() {
+  const [isPopUpVisible, setPopUpVisible] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPopUpVisible(false);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const closePopUp = () => {
+    setPopUpVisible(false);
+  };
 
   const [isRequestFormVisible, setRequestFormVisible] = useState(false);
   const toggleRequestForm = () => {
     setRequestFormVisible(!isRequestFormVisible);
   };
-
   
   const [mobMenu, setmobMenu] = useState(false)
 
@@ -40,7 +52,10 @@ function App() {
     setmobMenu(!mobMenu)
   }
 
+
+
   useEffect(()=>{
+
     var map = DG.map('map', {
       'center': [51.1379538, 71.4342074],
       'zoom': 18
@@ -58,12 +73,13 @@ function App() {
 
     return(
       <div className='App'>
+        <PopUpDiscont isVisible={isPopUpVisible} onClose={closePopUp}/>
         <RequestForm isVisible={isRequestFormVisible} onClose={toggleRequestForm} />
         <div className='mob_menu_box'>
           <ul className='mob_menu_list'>
                 <li>
-                <a href='https://www.instagram.com/nak.astana/' className='link_button'><Instagram className='mob_menu_icons' color="white" /></a>
-                <a href='https://www.facebook.com/nak.construction' className='link_button'>
+                <a target='_blank' href='https://www.instagram.com/nak.holding/?hl=ru' className='link_button'><Instagram className='mob_menu_icons' color="white" /></a>
+                <a target='_blank' href='https://www.facebook.com/nak.construction' className='link_button'>
                 <Facebook className='mob_menu_icons' color="white"/>
                 </a>
                 </li>
@@ -75,11 +91,11 @@ function App() {
                 <li><a href='#SalesDepartment'>Отдел продаж</a></li>
           </ul>
         </div>
-        <div className='header'>
+        <div  className='header'>
         <div className='header_left'>
         <div className='header_left_icons'>
-           <a href='https://www.instagram.com/nak.astana/' className='link_button'><Instagram className='top_icon' color="white" /></a> 
-            <a href='https://www.facebook.com/nak.construction' className='link_button'><Facebook className='top_icon' color="white"/></a>
+           <a target='_blank' href='https://www.instagram.com/nak.holding/?hl=ru' className='link_button'><Instagram className='top_icon' color="white" /></a> 
+            <a target='_blank' href='https://www.facebook.com/nak.construction' className='link_button'><Facebook className='top_icon' color="white"/></a>
         </div>
         <div className='header_left_menu'>
           <button className='burger' onClick={MobMenuState}></button>
@@ -92,7 +108,7 @@ function App() {
         </div>
         </div>
         <div className='header_middle'>
-        <svg className='middlelogo' xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve"  version="1.1" style={{ shapeRendering: 'geometricPrecision', textRendering: 'geometricPrecision', imageRendering: 'optimizeQuality', fillRule: 'evenodd', clipRule: 'evenodd' }}
+        <a href='#Top'><svg className='middlelogo' xmlns="http://www.w3.org/2000/svg" xmlSpace="preserve"  version="1.1" style={{ shapeRendering: 'geometricPrecision', textRendering: 'geometricPrecision', imageRendering: 'optimizeQuality', fillRule: 'evenodd', clipRule: 'evenodd' }}
           viewBox="0 0 32.81 27.34"
           xmlnsXlink="http://www.w3.org/1999/xlink"
           xmlnsXodm="http://www.corel.com/coreldraw/odm/2003">
@@ -142,6 +158,7 @@ function App() {
             </g>
           </g>
         </svg> 
+        </a>
       </div>
         <div className='header_right'>
         <div className='header_right_menu'>
@@ -152,12 +169,12 @@ function App() {
             </ul>
         </div>
         <div className='header_right_contacts'>
-          <a className='link_button' href='tel:+77005199999'><TelephoneForwardFill className='top_icon' /></a>
+          <a className='link_button' href='tel:+77066999500'><TelephoneForwardFill className='top_icon' /></a>
         </div>
         </div>
         </div>
         <Planirovka/>
-        <div className='top_carousel'>
+        <div id='Top' className='top_carousel'>
           <CarouselFadeExample/>
         </div>
         <div id='RoyalExpo' className='complex_Royal_description'>
@@ -180,8 +197,12 @@ function App() {
             <br/>
             ROYAL EXPO — жилой комплекс премиум-класса, состоящий из 23 домов с небольшой этажностью 6-7-8 этажей, с квартирами площадью от 74,3 до 187,7 кв. м.
             <br/>
+            <br/>
+
             Архитектура комплекса выполнена в современном стиле с использованием классических элементов, которые подчеркивают благородство форм и статус жилого комплекса.
+            <br/>   
             <br/>                                    
+
             Эффектная геометрия и минималистичный декор этого фасада создают впечатление современной роскоши.
             </p>
           </div>
@@ -322,9 +343,9 @@ function App() {
           </p>
           <div className='nak-company_items mt-5'>
             <div className='nak-company_description'>
-            «NAK» - динамично развивающаяся строительная компания, которая зарекомендовала себя как серьезный и надежный застройщик на казахстанском рынке.
+            {/* «NAK» - динамично развивающаяся строительная компания, которая зарекомендовала себя как серьезный и надежный застройщик на казахстанском рынке.
             <br/>
-            <br/>
+            <br/> */}
             Начиная с 2006 года, мы достигли значительных результатов в проведении строительных работ разной сложности, научились решать практически любые задачи в области строительства и его организационно-технологического обеспечения, а также успешно реализовали разнообразные проекты в сферах жилищного, коммерческого и промышленного строительства.
             </div>
             <div className='nak-company_img'>
@@ -333,7 +354,7 @@ function App() {
           <div className='nak-company_numbers'>
             <div className='nak-company_number'>
               <p className='nak-company_bignumber'>
-              15
+              17
               </p>
               <p className='nak-company_number_description'>
               Лет <br/>
@@ -342,7 +363,7 @@ function App() {
             </div>
             <div id='bignumber500' className='nak-company_number'>
               <p className='nak-company_bignumber'>
-              {`>5000
+              {`>30000
 `}
 
               </p>
@@ -353,7 +374,7 @@ function App() {
             </div>
             <div className='nak-company_number'>
               <p className='nak-company_bignumber'>
-              70+
+              100+
               </p>
               <p className='nak-company_number_description'>
               Построенных<br/>
@@ -378,8 +399,8 @@ function App() {
                 </p>
                 <p className='sale-dep_item_description_text'>
                 Казахстан, г. Астана,<br/>
-                  ул. Сыганак, 58<br/>
-                <a href='#'>Проложить маршрут</a>
+                  <a target='_blank' href='https://2gis.kz/astana/geo/70000001039519027'>ул. Арай, 29</a><br/>
+                  <a target='_blank' href='https://2gis.kz/astana/geo/70000001082378100'>ул. Мангилик Ел, 38</a><br/>
                 </p>
                 </div>
                 </div>
@@ -393,8 +414,8 @@ function App() {
                 График работы
                 </p>
                 <p className='sale-dep_item_description_text'>
-                Пн-Пт: 9:00-19:00<br/>
-                  Сб-Вс: 10:00-19:00<br/>
+                Пн-Пт: 9:00-20:00<br/>
+                  Сб-Вс: 10:00-18:00<br/>
                   Без обеда и выходных
 
                 </p>
@@ -409,8 +430,8 @@ function App() {
                 Телефон:
                 </p>
                 <p className='sale-dep_item_description_text'>
-                +7 (700) 519-99-99<br/>
-                  <a href='#'>Написать в Whatsapp</a>
+                +7 (706) 699-95-00<br/>
+                  <a  href='#'>Написать в Whatsapp</a>
                   
                 </p>
                 </div>
@@ -425,7 +446,7 @@ function App() {
                 </p>
                 <p className='sale-dep_item_description_text'>
 
-                  <a href='#'>@nak.astana</a>
+                  <a target='_blank' href='https://www.instagram.com/nak.holding/?hl=ru'>@nak.holding</a>
                   
                 </p>
                 </div>

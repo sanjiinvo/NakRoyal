@@ -14,7 +14,7 @@ function CarouselFadeExample() {
         <Carousel.Caption className='top_carous_text_box'>
           <h3 className='top_carous_img_tittle'>Жилой комплекс «Royal Expo»</h3>
           <p className='top_carous_img_text'>Искуство жить в гармонии.</p>
-          <a className='download-file-link' href='#'>Скачать презентацию   <FiletypePdf color='white' size={32} className='download-file'/></a>
+          <a className='download-file-link' href='https://drive.usercontent.google.com/u/0/uc?id=119j_1M0KbntoobBgI8tvpd6VfGxtM94v&export=download'>Скачать презентацию   <FiletypePdf color='white' size={32} className='download-file'/></a>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -24,7 +24,7 @@ function CarouselFadeExample() {
         <Carousel.Caption className='top_carous_text_box'>
           <h3 className='top_carous_img_tittle'>Жилой комплекс «Royal Expo»</h3>
           <p className='top_carous_img_text'>Быть свободным и выбирать самое лучшее</p>
-          <a className='download-file-link' href='#'>Скачать презентацию   <FiletypePdf color='white' size={32} className='download-file'/></a>
+          <a className='download-file-link' href='https://drive.usercontent.google.com/u/0/uc?id=119j_1M0KbntoobBgI8tvpd6VfGxtM94v&export=download'>Скачать презентацию   <FiletypePdf color='white' size={32} className='download-file'/></a>
         </Carousel.Caption>
       </Carousel.Item>
 
@@ -36,7 +36,7 @@ function CarouselFadeExample() {
           <p className='top_carous_img_text'>
             Великолепие в каждой детали.
           </p>
-          <a className='download-file-link' href='#'>Скачать презентацию   <FiletypePdf color='white' size={32} className='download-file'/></a>
+          <a className='download-file-link' href='https://drive.usercontent.google.com/u/0/uc?id=119j_1M0KbntoobBgI8tvpd6VfGxtM94v&export=download'>Скачать презентацию   <FiletypePdf color='white' size={32} className='download-file'/></a>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>

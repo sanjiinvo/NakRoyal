@@ -1,11 +1,11 @@
 <?php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $name = isset($_POST['name']) ? trim($_POST['name']) : '';
-    $phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
-    $message = isset($_POST['message']) ? trim($_POST['message']) : '';
+    $name = isset($_POST['name']) ? $_POST['name'] : '';
+    $phone = isset($_POST['phone']) ? $_POST['phone'] : '';
+    $message = isset($_POST['message']) ? $_POST['message'] : '';
 
-    if (!empty($name) && !empty($phone) && !empty($message)) {
+    if ($name && $phone && $message) {
         $to = "sanzhar_sattybaev@mail.ru";
         $subject = "Новая заявка с сайта ROYAL EXPO";
         $body = "Имя: $name\nТелефон: $phone\nСообщение: $message";
